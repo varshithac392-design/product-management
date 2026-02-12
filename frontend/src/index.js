@@ -1,0 +1,21 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { OrderProvider } from './context/OrderContext'
+import { AuthProvider } from './context/AuthContext'
+import { ProductProvider } from './context/ProductContext'
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+)
+
+root.render(
+  <AuthProvider>
+    <ProductProvider>
+      <OrderProvider>
+        <App />
+      </OrderProvider>
+    </ProductProvider>
+  </AuthProvider>
+)
